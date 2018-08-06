@@ -31,7 +31,7 @@ public class DataProvider {
             if (conn != null) {
                 System.out.println("数据库连接正常！");
                 stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT * FROM bbd_testcases WHERE Method = "+"\""+method+"\""+"AND testType = "+"\""+testType+"\"");
+                rs = stmt.executeQuery("SELECT * FROM bbd_testcases WHERE Method = "+"'"+method+"'"+"AND testType = "+"'"+testType+"'");
 
                 while (rs.next()) {
                     r = rs.getString("Parameters");
