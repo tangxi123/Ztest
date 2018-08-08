@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Map;
 
-public class TokenResult {
+public class Result {
     String code;
     String message;
     Map<String, Object> data;
@@ -25,5 +25,11 @@ public class TokenResult {
     }
     public Map<String, Object> getData(){
         return this.data;
+    }
+    @Override
+    public String toString(){
+        return  "code = "+ code +
+                "message = " + message +
+                "data = " + data.toString();
     }
 }

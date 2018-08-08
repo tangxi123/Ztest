@@ -1,23 +1,13 @@
 package base;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.sun.corba.se.impl.oa.poa.ActiveObjectMap;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import object.TokenResult;
+import object.Result;
 import util.ParameterBuilder;
 
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-
 
 
 public class Token {
@@ -53,7 +43,7 @@ public class Token {
             String result = content.toString();
 
             ObjectMapper mapper1 = new ObjectMapper();
-            TokenResult t = mapper1.readValue(result,TokenResult.class);
+            Result t = mapper1.readValue(result, Result.class);
             token = t.getData().get("access_token").toString();
             return token;
     }
